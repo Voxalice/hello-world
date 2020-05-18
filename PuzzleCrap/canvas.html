@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Canvaaaaas!!</title>
+        <script src="lib/codemirror.js"></script>
+        <link rel="stylesheet" href="lib/codemirror.css">
+        <script src="/mode/javascript/javascript.js"></script>
+        <script>
+            function start(){
+                var e=document.getElementById("T");void 0!==e&&null!=e&&e.parentNode.removeChild(e);var x=document.createElement("script");x.textContent=mcmCODE.getValue(),x.id="T",document.body.appendChild(x);
+            }
+        </script>
+    </head>
+    
+    <body>
+        <table style="margin-left:auto; margin-right:auto">
+            <tbody>
+                <tr>
+                    <td id="b">
+                        <textarea rows="33" cols="66">function draw(){
+      setTimeout(draw,24);
+}</textarea>
+                    </td>
+                    <td>
+                        <canvas width="550" height="440">
+                            <p>Get a browser that supports the Canvas API :)</p>
+                        </canvas>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <em style="text-align:center;display:block">powered by CodeMirror 5.52.2</em><button style="margin-left:auto;margin-right:auto;display:block;font-size:15px" onclick="start();">run</button><br><a href="/dC-docs/dC_index.html" style="text-align:center;display:block">check out the docs</a>
+        
+        <script>
+            var mcmCODE = CodeMirror.fromTextArea(document.querySelector('textarea'));
+            function download(e,t){var d=document.createElement("a");d.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(t)),d.setAttribute("download",e),d.style.display="none",document.body.appendChild(d),d.click(),document.body.removeChild(d)}
+        </script>
+        
+        <noscript>
+            <h1 style="text-align:center">Turn on JavaScript or don't use Mosaic Netscape.</h1>
+        </noscript>
+        
+        <script src="devCanvas.js"></script>
+        <script src="modernizr-custom.js"></script>
+    </body>
+</html>

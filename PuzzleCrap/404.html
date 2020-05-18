@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>NOT A CHANCE!</title>
+        <link href="/index.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1 id="sep">This page is not available, or it was deleted completely.</h1>
+        <p id="small" style="color: gray">I'm gonna try to figure out what you were supposed to be looking at with MAGIC!</p>
+        <p id="refer">You got referred from <span>somewhere I can't guess without JavaScript enabled</span>.</p> <p>If you're sure this page is supposed to exist, click <a href="https://strawpoll.com/g7724xcb" style="padding:3px" id="sep">HERE,</a> or click the button below to exit.</p><br><a href="/" style="padding:10px" id="sep">back!</a>
+        
+        <script>
+            if(document.referrer!=""){document.querySelector("span").textContent=document.referrer}else{document.querySelector('#refer').style.display="none"}
+        </script>
+    </body>
+</html>

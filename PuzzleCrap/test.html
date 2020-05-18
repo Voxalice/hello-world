@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Title of app</title>
+        <style>
+            h1{background: red;}
+        </style>
+        <script>
+            var altf4possible=0;
+            document.addEventListener("keydown", function(event) {
+                console.log(event.which);
+                if(event.which===18){
+                    altf4possible=1;
+                }
+                if(altf4possible===1){
+                    if(event.which===115){
+                        altf4possible=0;
+                        alert("Stop!");
+                    }
+                }
+            });
+        </script>
+    </head>
+    
+    <body>
+        <h1>Test page</h1>
+    </body>
+</html>

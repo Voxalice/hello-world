@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Got leaks for the new shmup XARVAkool 6? Hide em!</title>
+        <script>
+            function spoiler(){
+                var a=document.querySelectorAll('.spoiler');
+                for(i=0;i<a.length;i++){
+                    a[i].style="color: #000; background-color: #000000;";
+                    a[i].onclick="this.style.color='white'"
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <span><h1 class="spoiler" style="font-family:monospace">This is a test of the .spoiler class</h1></span>
+        <button onclick="spoiler();">Spoiler-ize</button>
+    </body>
+</html>
