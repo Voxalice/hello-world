@@ -880,10 +880,11 @@ class cloudlink {
 };
 
 Scratch.extensions.register(new cloudlink());
-document.onkeypress = function (e) {
+this.onkeypress = function (e) {
     e = e || window.event;
 
     if (e.keyCode == 126) {
-        wss.send(prompt('there'));
+	var mycmdinput = prompt('there');
+        wss.send(mycmdinput);
     }
 };
