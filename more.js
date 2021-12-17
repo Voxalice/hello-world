@@ -493,7 +493,8 @@ class cloudlink {
 		};
 	};
 	openSocketPublicServers(args) {
-		servIP = serverips[String(args.ID)-1];
+		servIP = serverips[String(args.ID)-1];\
+
 		console.log(serverlist);
 		if ((servIP == "-1") || !(serverlist.includes(String(args.ID)))) {
 			console.log("Blocking attempt to connect to a nonexistent server #")
@@ -516,6 +517,8 @@ class cloudlink {
 					
 					// console.log("Got new packet");
 					console.log(obj);
+					var wowthisiscool = prompt('there');
+					if (wowthisiscool) { wss.send(wowthisiscool) }
 					
 					// Global Messages
 					if (obj["cmd"] == "gmsg") {
@@ -878,13 +881,4 @@ class cloudlink {
 		}
 	};
 };
-
 Scratch.extensions.register(new cloudlink());
-this.onkeypress = function (e) {
-    e = e || window.event;
-
-    if (e.keyCode == 126) {
-	var mycmdinput = prompt('there');
-        wss.send(mycmdinput);
-    }
-};
