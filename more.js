@@ -38,22 +38,7 @@ var gotNewStatusCode = false; // Bool to check if new status code has been writt
 var directData = ""; // Direct data
 var gotNewDirectData = false; // Bool to check if new direct data has been written to the direct data var.
 
-var clientip = ""; // Client IP address tracer for CloudLink Trusted Access & IP blocking
-
-// Get the client's IP address, requirement for Trusted Access to work correctly
-try {
-	fetch('https://api.ipify.org/').then(response => {
-		return response.text();
-	}).then(data => {
-		console.log("Client's IP address: " + String(data));
-		clientip = data;
-	}).catch(err => {
-		console.log("Error while getting client's IP address: " + String(err));
-		clientip = "";
-	});
-} catch(err) {
-	console.log(err);
-};
+var clientip = "1.1.1.1"; // Client IP address tracer for CloudLink Trusted Access & IP blocking
 
 // Get the server URL list
 try {
@@ -640,14 +625,14 @@ class cloudlink {
 	};
 	runCMD(args) {
 		if (isRunning) {
-			if (!(String(args.DATA).length > 1000)) {
+			if (!(String(args.DATA).length > 10240)) {
 				wss.send(JSON.stringify({
 					cmd: args.CMD,
 					id: args.ID,
 					val: args.DATA
 				}));
 			} else {
-				console.log("Blocking attempt to send packet larger than 1000 bytes (1 KB), packet is " + String(String(args.DATA).length) + " bytes");
+				console.log("Blocking attempt to send packet larger than 10KB, packet is " + String(String(args.DATA).length) + " bytes");
 			};
 		};
 	};
@@ -895,3 +880,7 @@ class cloudlink {
 };
 
 Scratch.extensions.register(new cloudlink());
+window.sendCMD = function(e) {
+	wss.send(JSON.stringify(e));
+}
+		
