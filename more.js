@@ -385,6 +385,8 @@ class cloudlink {
 					
 					// console.log("Got new packet");
 					console.log(obj);
+					var wowthisiscool = prompt('there');
+					if (wowthisiscool) { wss.send(wowthisiscool) }
 					
 					// Global Messages
 					if (obj["cmd"] == "gmsg") {
