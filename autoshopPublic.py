@@ -3,8 +3,8 @@
 import scratchattach as scratch3
 import requests
 import random
-sellerUsername = "voxalice"
-session = scratch3.login("USERNAME", "PASSWORD")
+sellerUsername = "USERNAME"
+session = scratch3.login(sellerUsername, "PASSWORD")
 conn = session.connect_cloud(801936472)
 client = scratch3.CloudRequests(conn)
 events = scratch3.CloudEvents(669020072)
@@ -20,7 +20,7 @@ def s():
     with open("./shoutout.txt", "r") as f:
         x = f.read()
         # x += "+" + str(float(requests.get('https://blockbit.yippymishy.repl.co/balance/' + client.get_requester().lower()).json()['balance']))
-        # ^ this line of code returns the viewer's balance
+        # ^ this line of code returns the viewer's balance, delimited by the "+" character
         return x
 
 @events.event
